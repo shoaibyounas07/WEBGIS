@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaflet Map with WFS Layers</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <!-- Include Leaflet Geosearch CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css"/>
+
+    <!-- Include Leaflet Geolocate CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.81.1/dist/L.Control.Locate.min.css" rel="stylesheet">
+
+    <!-- Include Leaflet Draw CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+
+    <!-- Include Leaflet Routing Machine CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="./css.css"> <!-- Links to a custom CSS file for additional styling -->
+
+    <!-- Links TAG TO WWW.FONTICON  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="control-buttons">
+    <!-- Dropdown for layer selection -->
+    <select id="layerSelect">
+      <option value="provinces">Provinces</option>
+      <option value="divisions">Divisions</option>
+      <option value="districts">Districts</option>
+    </select>
+    <button onclick="loadSelectedLayer()">Load Layer</button>
+  </div>
+  
+    <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- Include Leaflet Geosearch JavaScript -->
+    <script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script> 
+
+    <!-- Include Leaflet Geolocate JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.81.1/dist/L.Control.Locate.min.js"></script>
+
+    <!-- Include Leaflet Draw JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+
+ <!-- Include Leaflet Routing Machine JS -->
+ <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+
+ <!-- Include Leaflet Control Geocoder JS -->
+ <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+ 
+    <!-- Include Leaflet-featues_geojson Search CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-search@3.0.0/dist/leaflet-search.min.css" />
+    <script src="https://unpkg.com/leaflet-search@3.0.0/dist/leaflet-search.min.js"></script>
+  <script src="./feature_wfs.js"></script>
+</body>
+</html>
